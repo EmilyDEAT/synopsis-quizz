@@ -1,0 +1,11 @@
+.button-play {
+  background-color: #cf1717;
+  width: 30vw;
+  height: 7vh;
+  color: white;
+  font-family: 'roboto-bold';
+  font-size: 1.7em;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+}
