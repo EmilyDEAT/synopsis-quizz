@@ -6,6 +6,7 @@
   font-family: 'roboto-medium';
   font-size: 1.2em;
   border-radius: 7px;
+  margin: 0 auto 6vh auto;
 }
 
 .input-answer:focus {

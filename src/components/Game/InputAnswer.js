@@ -12,9 +12,7 @@ class InputAnswer extends React.Component {
   }
   render() {
     return (
-      <div className="answer">
         <input type="text" className="input-answer" onChange={this.handleChange}/>
-      </div>
     );
   }
 }
