@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 
+import Button from "../Button";
 import DisplaySynopsis from "./DisplaySynopsis";
 import InputAnswer from "./InputAnswer";
 
@@ -34,6 +35,7 @@ class Game extends React.Component {
       <div className="game-page">
         <DisplaySynopsis movie={this.state.movie}/>
         <InputAnswer />
+        <Button titre="VALIDER" />
       </div>
     );
   }

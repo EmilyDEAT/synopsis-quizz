@@ -1,5 +1,5 @@
 import React from 'react'
-import ButtonPlay from '../ButtonPlay'
+import Button from '../Button'
 
 import logo from '../../Images/logo-synopsis-quizz.png'
 
@@ -10,7 +10,7 @@ const Home = () => {
   return(
     <div className='home-page'>
         <img className='home-logo' src={logo} alt='logo synopsis quizz'/>
-        <ButtonPlay />
+        <Button />
     </div>
   )
 }
