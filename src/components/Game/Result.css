@@ -1,0 +1,8 @@
+.result-card {
+  background-color: var(--main-color);
+  opacity: 0.9;
+  height: 50vh;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}

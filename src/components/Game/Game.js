@@ -4,6 +4,7 @@ import axios from "axios";
 import Button from "../Button";
 import DisplaySynopsis from "./DisplaySynopsis";
 import InputAnswer from "./InputAnswer";
+import Result from "./Result"
 
 import "./Game.css";
 
@@ -32,10 +33,13 @@ class Game extends React.Component {
   }
   render() {
     return (
-      <div className="game-page">
+      <div className="game-container">
+        <div className="game-page">
         <DisplaySynopsis movie={this.state.movie}/>
         <InputAnswer />
         <Button titre="VALIDER" />
+        </div>
+        <Result className='result-page'/>
       </div>
     );
   }
