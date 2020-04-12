@@ -1,0 +1,17 @@
+.score-container {
+  color: white;
+  border-bottom: white 1px solid ;
+  width: 45%;
+  margin-left: 50%;
+  padding-bottom: 4vh;
+}
+
+.score-text {
+  font-family: 'roboto-bold';
+  font-size: 2em;
+}
+
+.score-result {
+  font-family: 'roboto-medium';
+  font-size: 1.2em;
+}
