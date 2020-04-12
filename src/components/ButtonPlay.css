@@ -1,5 +1,5 @@
 .button-play {
-  background-color: #cf1717;
+  background-color: var(--main-color);
   width: 30vw;
   height: 7vh;
   color: white;

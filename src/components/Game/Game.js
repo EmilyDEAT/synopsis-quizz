@@ -1,6 +1,8 @@
 import React from "react";
 import axios from "axios";
+
 import DisplaySynopsis from "./DisplaySynopsis";
+import InputAnswer from "./InputAnswer";
 
 import "./Game.css";
 
@@ -31,6 +33,7 @@ class Game extends React.Component {
     return (
       <div className="game-page">
         <DisplaySynopsis movie={this.state.movie}/>
+        <InputAnswer />
       </div>
     );
   }

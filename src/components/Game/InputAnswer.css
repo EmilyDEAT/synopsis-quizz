@@ -1,0 +1,13 @@
+.input-answer {
+  border: 2px solid var(--main-color);
+  width: 60%;
+  height: 5vh;
+  color: black;
+  font-family: 'roboto-medium';
+  font-size: 1.2em;
+  border-radius: 7px;
+}
+
+.input-answer:focus {
+  outline: none;
+}
