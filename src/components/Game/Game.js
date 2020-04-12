@@ -31,13 +31,18 @@ class Game extends React.Component {
   state = {
     movie: movies[0]
   }
+
+  displayResult = () => {
+    document.querySelector('.result-card').style.display = 'block';
+};
+
   render() {
     return (
       <div className="game-container">
         <div className="game-page">
         <DisplaySynopsis movie={this.state.movie}/>
         <InputAnswer />
-        <Button titre="VALIDER" />
+        <Button titre="VALIDER" onClick={this.displayResult}/>
         </div>
         <Result className='result-page'/>
       </div>
