@@ -9,3 +9,7 @@
   border-radius: 7px;
   cursor: pointer;
 }
+
+.button:focus {
+  outline: none;
+}

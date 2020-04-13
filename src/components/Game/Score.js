@@ -1,19 +1,28 @@
-import React from 'react'
+import React from "react";
 
-import "./Score.css"
+import next from "../../Images/next.png";
+import "./Score.css";
 
 class Score extends React.Component {
-  state={
-    score: 0
-  }
-  render(){
-    return(
+  state = {
+    score: 0,
+  };
+
+  hideResult = () => {
+    document.querySelector('.result-card').style.display = 'none';
+};
+
+  render() {
+    return (
       <div className="score-container">
-        <h2 className='score-text'>BRAVO !</h2>
-        <p className="score-result">Films trouvés: {this.state.score}/10</p>
+        <div className="score">
+          <h2 className="score-text">BRAVO !</h2>
+          <p className="score-result">Films trouvés: {this.state.score}/10</p>
+        </div>
+        <img className="arrow-next" src={next} alt="white arrow" onClick={this.hideResult}/>
       </div>
-    )
+    );
   }
 }
 
-export default Score
+export default Score;

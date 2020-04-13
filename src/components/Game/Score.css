@@ -4,6 +4,9 @@
   width: 45%;
   margin-left: 50%;
   padding-bottom: 4vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .score-text {
@@ -14,4 +17,10 @@
 .score-result {
   font-family: 'roboto-medium';
   font-size: 1.2em;
+}
+
+.arrow-next {
+  height: 5vh;
+  margin-left: 5vw;
+  cursor: pointer;
 }
