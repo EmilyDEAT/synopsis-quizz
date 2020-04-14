@@ -5,10 +5,10 @@ import Score from './Score'
 import './Result.css'
 
 
-const Result = () => {
+const Result = ({count}) => {
   return (
     <div className='result-card'>
-      <Score />
+      <Score count={count}/>
     </div>
   )
 }
