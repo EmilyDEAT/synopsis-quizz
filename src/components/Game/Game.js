@@ -31,15 +31,17 @@ const movies = [
 ];
 
 class Game extends React.Component {
+  inputAnswer = React.createRef()
+
   state = {
-    movie: movies[0],
+    movie: 0,
     answer: "",
-    count: 0
+    count: 0,
   };
 
   testAnswer = () => {
     const count = this.state.count
-    if (this.state.answer === this.state.movie.title){
+    if (this.state.answer === movies[this.state.movie].title){
       this.setState({ count: count + 1 });
     }
   };
@@ -53,15 +55,21 @@ class Game extends React.Component {
     document.querySelector(".result-card").style.display = "block";
   };
 
+  changeMovie = () => {
+    const movie = this.state.movie
+    this.setState({movie: movie + 1})
+    this.inputAnswer.current.textInput.current.value = ""
+  }
+
   render() {
     return (
       <div className="game-container">
         <div className="game-page">
-          <DisplaySynopsis movie={this.state.movie} />
-          <InputAnswer value={this.handleChangeInput} />
+          <DisplaySynopsis movie={movies[this.state.movie]} />
+          <InputAnswer onChange={this.handleChangeInput} ref={this.inputAnswer}/>
           <Button titre="VALIDER" onClick={this.displayResult} />
         </div>
-        <Result count={this.state.count} className="result-page" />
+        <Result count={this.state.count} className="result-page" value={this.changeMovie}/>
       </div>
     );
   }

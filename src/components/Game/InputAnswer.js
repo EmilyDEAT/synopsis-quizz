@@ -3,9 +3,11 @@ import React from "react";
 import './InputAnswer.css'
 
 class InputAnswer extends React.Component {
+  textInput = React.createRef()
+
   render() {
     return (
-        <input type="text" className="input-answer" onChange={this.props.value}/>
+        <input ref={this.textInput} type="text" className="input-answer" onChange={this.props.onChange} />
     );
   }
 }

@@ -7,6 +7,7 @@ class Score extends React.Component {
 
   hideResult = () => {
     document.querySelector('.result-card').style.display = 'none';
+    this.props.value()
 };
 
   render() {
