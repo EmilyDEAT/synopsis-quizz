@@ -1,4 +1,4 @@
-.button:focus {
+.red:focus, .white:focus{
   outline: none;
 }
 
