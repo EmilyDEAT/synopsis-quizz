@@ -37,12 +37,15 @@ class Game extends React.Component {
     movie: 0,
     answer: "",
     count: 0,
+    result: false
   };
 
   testAnswer = () => {
     const count = this.state.count
     if (this.state.answer === movies[this.state.movie].title){
-      this.setState({ count: count + 1 });
+      this.setState({ count: count + 1 , result: true});
+    } else {
+      this.setState({result: false})
     }
   };
 
@@ -69,7 +72,7 @@ class Game extends React.Component {
           <InputAnswer onChange={this.handleChangeInput} ref={this.inputAnswer}/>
           <Button titre="VALIDER" onClick={this.displayResult} />
         </div>
-        <Result count={this.state.count} className="result-page" value={this.changeMovie}/>
+        <Result count={this.state.count} className="result-page" value={this.changeMovie} result={this.state.result}/>
       </div>
     );
   }

@@ -14,7 +14,7 @@ class Score extends React.Component {
     return (
       <div className="score-container">
         <div className="score">
-          <h2 className="score-text">BRAVO !</h2>
+          <h2 className="score-text">{this.props.result ? "BRAVO !" : "DOMMAGE !"}</h2>
           <p className="score-result">Films trouvés: {this.props.count}/10</p>
         </div>
         <img className="arrow-next" src={next} alt="white arrow" onClick={this.hideResult}/>
