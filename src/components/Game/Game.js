@@ -10,7 +10,6 @@ import Result from "./Result";
 import "./Game.css";
 
 const apiKey = process.env.REACT_APP_TMDB_API_KEY;
-const page = Math.floor(Math.random() * 10);
 const genre = 12;
 
 class Game extends React.Component {
@@ -18,7 +17,7 @@ class Game extends React.Component {
 
   state = {
     movies: null,
-    movie: 16,
+    movie: 0,
     answer: "",
     count: 0,
     result: false,
@@ -51,7 +50,7 @@ class Game extends React.Component {
   componentDidMount() {
     axios
       .get(
-        `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=fr&sort_by=revenue.desc&include_adult=false&page=${Math.floor(Math.random() * 10)}&with_genres=${genre}`
+        `http://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=fr&page=${Math.floor(Math.random() * 10)}&with_genres=${genre}`
       )
       .then((res) => this.setState({ movies: res.data.results }));
   }
