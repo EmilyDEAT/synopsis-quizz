@@ -17,7 +17,7 @@ class Score extends React.Component {
           <h2 className="score-text">
             {this.props.result ? "BRAVO !" : "DOMMAGE !"}
           </h2>
-          <p className="score-result">Films trouvés: {this.props.count}/20</p>
+          <p className="score-result">Films trouvés: {this.props.count}/{this.props.movie + 1}</p>
         </div>
         {!this.props.stop ? (
           <img

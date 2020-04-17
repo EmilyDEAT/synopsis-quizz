@@ -15,7 +15,7 @@ const End = () => {
       <div className='end-container'>
         <EndResult />
         <Link to="/game">
-        <Button titre='REJOUER' white />
+        <Button titre='REJOUER' onClick={() => localStorage.clear()} white />
         </Link>
         
       </div>

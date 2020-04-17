@@ -3,11 +3,11 @@ import React from "react";
 import "./EndResult.css";
 
 const endResultText = [
-  "Sublime !!!! Tu connais tout je suis sans mot !",
+  "Sublime !!!! Tu connais tout, je suis sans mot !",
   "Bravo! les films n'ont aucun secret pour toi!",
   "Pas mal tout ça ! Encore un peu d'entraînement et tu seras au top !",
   "Bon, ce n'est pas encore ça, mais on est sur la bonne voie...",
-  "Aïe aïe aïe... on est mal barré ! Va falloir regarder des film, et vite !",
+  "Aïe aïe aïe... on est mal barré ! Va falloir regarder des films, et vite !",
 ];
 const totalScore = localStorage.getItem("totalScore");
 
