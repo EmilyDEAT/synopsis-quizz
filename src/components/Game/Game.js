@@ -3,10 +3,12 @@ import axios from "axios";
 
 import Button from "../Button";
 import DisplaySynopsis from "./DisplaySynopsis";
+import Header from "../Header";
 import InputAnswer from "./InputAnswer";
 import Result from "./Result";
 
 import "./Game.css";
+
 
 const apiKey = process.env.REACT_APP_TMDB_API_KEY;
 const page = 1;
@@ -68,6 +70,7 @@ class Game extends React.Component {
     return (
       <div className="game-container">
         <div className="game-page">
+          <Header />
           <DisplaySynopsis movie={movies[this.state.movie]} />
           <InputAnswer onChange={this.handleChangeInput} ref={this.inputAnswer}/>
           <Button titre="VALIDER" onClick={this.displayResult} />
