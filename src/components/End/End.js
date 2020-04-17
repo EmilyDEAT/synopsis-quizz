@@ -1,26 +1,24 @@
-import React from 'react'
+import React from "react";
 import { Link } from "react-router-dom";
 
-import Button from '../Button'
-import EndResult from './EndResult'
-import Header from '../Header'
+import Button from "../Button";
+import EndResult from "./EndResult";
+import Header from "../Header";
 
-import './End.css'
-
+import "./End.css";
 
 const End = () => {
   return (
-    <div className='end-page'>
+    <div className="end-page">
       <Header />
-      <div className='end-container'>
+      <div className="end-container">
         <EndResult />
         <Link to="/game">
-        <Button titre='REJOUER' onClick={() => localStorage.clear()} white />
+          <Button titre="REJOUER" onClick={() => localStorage.clear()} white />
         </Link>
-        
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default End
+export default End;
