@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "271ca26e7d8be79b355efe9f16829da4",
+    "revision": "68b6641d938bd0aa9f6e7024e0a9f149",
     "url": "/synopsis-quizz/index.html"
   },
   {
-    "revision": "9eac6b57ac24daab128d",
-    "url": "/synopsis-quizz/static/css/main.0231bfc1.chunk.css"
+    "revision": "5c89cb6de64ea050a336",
+    "url": "/synopsis-quizz/static/css/main.fe71e886.chunk.css"
   },
   {
-    "revision": "eb5e35d9516d6924de3d",
-    "url": "/synopsis-quizz/static/js/2.6bebbcd6.chunk.js"
+    "revision": "186f225d4b5e6f7742fe",
+    "url": "/synopsis-quizz/static/js/2.e166dc2f.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/synopsis-quizz/static/js/2.6bebbcd6.chunk.js.LICENSE.txt"
+    "url": "/synopsis-quizz/static/js/2.e166dc2f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "9eac6b57ac24daab128d",
-    "url": "/synopsis-quizz/static/js/main.ef3954cf.chunk.js"
+    "revision": "5c89cb6de64ea050a336",
+    "url": "/synopsis-quizz/static/js/main.01a3f72b.chunk.js"
   },
   {
     "revision": "6641c2cc6b9e66ba9e57",
