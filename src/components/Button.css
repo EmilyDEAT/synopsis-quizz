@@ -1,8 +1,12 @@
-.button {
+.button:focus {
+  outline: none;
+}
+
+.red {
   background-color: var(--main-color);
+  color: white;
   width: 30vw;
   height: 7vh;
-  color: white;
   font-family: 'roboto-bold';
   font-size: 1.7em;
   border: none;
@@ -10,6 +14,14 @@
   cursor: pointer;
 }
 
-.button:focus {
-  outline: none;
+.white {
+  background-color: white;
+  color: var(--main-color);
+  width: 30vw;
+  height: 7vh;
+  font-family: 'roboto-bold';
+  font-size: 1.7em;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
 }

@@ -1,0 +1,16 @@
+.endResult-container {
+  color: white;
+  padding-bottom: 4vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.endResult-text {
+  font-family: 'roboto-bold';
+  font-size: 2em;
+}
+
+.endResult-total {
+  font-family: 'roboto-medium';
+  font-size: 1.2em;
+}

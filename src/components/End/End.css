@@ -1,7 +1,12 @@
-.end-result-container {
+.end-container {
   background-color: var(--main-color);
   height: 85vh;
   width: 100%;
   position: absolute;
   bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  
 }
