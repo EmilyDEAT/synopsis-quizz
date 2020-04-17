@@ -9,10 +9,11 @@ const endResultText = [
   "Bon, ce n'est pas encore ça, mais on est sur la bonne voie...",
   "Aïe aïe aïe... on est mal barré ! Va falloir regarder des films, et vite !",
 ];
-const totalScore = localStorage.getItem("totalScore");
 
 class EndResult extends React.Component {
+  
   displayResultText = () => {
+    const totalScore = localStorage.getItem("totalScore");
     if (totalScore < 5) {
       return endResultText[4]
     } else if (totalScore <= 5 && totalScore < 10){
@@ -30,7 +31,7 @@ class EndResult extends React.Component {
     return (
       <div className="endResult-container">
         <h2 className='endResult-text'>{this.displayResultText()}</h2>
-        <p className='endResult-total'>Films trouvés: {totalScore}/20</p>
+        <p className='endResult-total'>Films trouvés: {localStorage.getItem("totalScore")}/20</p>
       </div>
     );
   }
