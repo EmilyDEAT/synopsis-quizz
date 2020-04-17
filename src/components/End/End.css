@@ -1,0 +1,7 @@
+.end-result-container {
+  background-color: var(--main-color);
+  height: 85vh;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}

@@ -1,5 +1,7 @@
 import React from "react";
 import axios from "axios";
+import { Redirect } from "react-router-dom";
+
 
 import Button from "../Button";
 import DisplaySynopsis from "./DisplaySynopsis";
@@ -75,7 +77,7 @@ class Game extends React.Component {
           <InputAnswer onChange={this.handleChangeInput} ref={this.inputAnswer}/>
           <Button titre="VALIDER" onClick={this.displayResult} />
         </div>
-        <Result count={this.state.count} className="result-page" value={this.changeMovie} result={this.state.result}/>
+        <Result count={this.state.count} className="result-page" value={this.changeMovie} result={this.state.result} stop={this.state.movie === movies.length-1} />
       </div>
     );
   }

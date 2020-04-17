@@ -5,10 +5,10 @@ import Score from './Score'
 import './Result.css'
 
 
-const Result = ({count, value, result}) => {
+const Result = ({...props}) => {
   return (
     <div className='result-card'>
-      <Score count={count} value={value} result={result}/>
+      <Score {...props}/>
     </div>
   )
 }
