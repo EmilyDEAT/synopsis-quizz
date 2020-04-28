@@ -7,8 +7,7 @@ import Home from "./components/Home/Home";
 
 import "./App.css";
 
-class App extends React.Component {
-  render(){
+const App = () => {
   return (
     <Router>
       <div className="App">
@@ -21,6 +20,5 @@ class App extends React.Component {
     </Router>
   );
   }
-}
 
 export default App;

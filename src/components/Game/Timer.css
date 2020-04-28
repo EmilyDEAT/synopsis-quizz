@@ -1,0 +1,40 @@
+.timer-container {
+  --PI: 3.14;
+  --d: 150px;
+  width: var(--d);
+  height: 150px;
+  position: relative;
+  margin-right: -90px;
+}
+
+svg {
+  transform: rotate(-90deg);
+  position:absolute;
+  left:0px;
+  height: 150px;
+}
+
+.circle {
+  --p: calc(var(--d)*var(--PI));
+  stroke-dasharray: var(--p) 0;
+  stroke-dashoffset: var(--p);
+  stroke-linecap: round;
+}
+
+@keyframes stroke {
+  to {
+    stroke-dasharray: var(--p) var(--p);
+  }
+}
+
+.time {
+  color: black;
+  font-family: 'roboto-medium';
+  font-size: 2em;
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  margin: 0;
+  line-height: 150px;
+}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 import Button from "../Button";
@@ -6,85 +6,84 @@ import DisplaySynopsis from "./DisplaySynopsis";
 import Header from "../Header";
 import InputAnswer from "./InputAnswer";
 import Result from "./Result";
+import Timer from "./Timer";
 
 import "./Game.css";
+
 
 const apiKey = process.env.REACT_APP_TMDB_API_KEY;
 const genre = 12;
 
-class Game extends React.Component {
-  inputAnswer = React.createRef();
+const Game = () => {
 
-  state = {
-    movies: null,
-    movie: 0,
-    answer: "",
-    count: 0,
-    result: false,
-  };
+    const [movies, setMovies] = useState(null)
+    const [movie, setMovie] =  useState(0)
+    const [answer, setAnswer] = useState("")
+    const [count, setCount] = useState(0)
+    const [result, setResult] = useState(false)
+    const [time, setTime] = useState(30)
 
-  testAnswer = () => {
-    const count = this.state.count;
-    if (this.state.answer === this.state.movies[this.state.movie].title) {
-      this.setState({ count: count + 1, result: true });
+  const testAnswer = () => {
+    if (answer === movies[movie].title) {
+      setCount(count + 1)
+      setResult(true);
     } else {
-      this.setState({ result: false });
+      setResult(false);
     }
   };
 
-  handleChangeInput = (event) => {
-    this.setState({ answer: event.target.value });
+  const handleChangeInput = (event) => {
+    setAnswer(event.target.value);
   };
 
-  displayResult = () => {
-    this.testAnswer();
+  const displayResult = () => {
+    testAnswer();
     document.querySelector(".result-card").style.display = "block";
   };
 
-  changeMovie = () => {
-    const movie = this.state.movie;
-    this.setState({ movie: movie + 1 });
-    this.inputAnswer.current.textInput.current.value = "";
+  const changeMovie = (e) => {
+    setMovie(movie + 1);
+    document.querySelector(".input-answer").value = ""
   };
 
-  componentDidMount() {
+  const getListMovies = () => {
     axios
       .get(
         `http://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=fr&page=${Math.floor(Math.random() * 10)}&with_genres=${genre}`
       )
-      .then((res) => this.setState({ movies: res.data.results }));
+      .then((res) => setMovies(res.data.results));
   }
 
-  render() {
+  useEffect(() => getListMovies(),[])
+
     return (
       <div className="game-container">
-        {this.state.movies === null ? (
+        {movies === null ? (
           "Loading..."
         ) : (
           <div>
             {" "}
             <div className="game-page">
               <Header />
-              <DisplaySynopsis movie={this.state.movies[this.state.movie]} />
+              <Timer time={time} movie={movie}/>
+              <DisplaySynopsis movie={movies[movie]} />
               <InputAnswer
-                onChange={this.handleChangeInput}
-                ref={this.inputAnswer}
+                onChange={handleChangeInput}
               />
-              <Button titre="VALIDER" onClick={this.displayResult} />
+              <Button titre="VALIDER" onClick={() => displayResult()} />
             </div>
             <Result
-              count={this.state.count}
+              count={count}
               className="result-page"
-              value={this.changeMovie}
-              result={this.state.result}
-              stop={this.state.movie === this.state.movies.length - 1}
-              movie={this.state.movie}
+              value={() => changeMovie()}
+              result={result}
+              stop={movie === movies.length - 1}
+              movie={movie}
             />
           </div>
         )}
       </div>
     );
   }
-}
 
 export default Game;

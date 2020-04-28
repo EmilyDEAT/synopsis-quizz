@@ -4,27 +4,26 @@ import { Link } from "react-router-dom";
 import next from "../../Images/next.png";
 import "./Score.css";
 
-class Score extends React.Component {
-  hideResult = () => {
+const Score = ({...props}) => {
+  const hideResult = () => {
     document.querySelector(".result-card").style.display = "none";
-    this.props.value();
+    props.value();
   };
 
-  render() {
     return (
       <div className="score-container">
         <div className="score">
           <h2 className="score-text">
-            {this.props.result ? "BRAVO !" : "DOMMAGE !"}
+            {props.result ? "BRAVO !" : "DOMMAGE !"}
           </h2>
-          <p className="score-result">Films trouvés: {this.props.count}/{this.props.movie + 1}</p>
+          <p className="score-result">Films trouvés: {props.count}/{props.movie + 1}</p>
         </div>
-        {!this.props.stop ? (
+        {!props.stop ? (
           <img
             className="arrow-next"
             src={next}
             alt="white arrow"
-            onClick={this.hideResult}
+            onClick={hideResult}
           />
         ) : (
           <Link to="./end">
@@ -33,7 +32,7 @@ class Score extends React.Component {
               src={next}
               alt="white arrow"
               onClick={() => {
-                localStorage.setItem("totalScore", this.props.count);
+                localStorage.setItem("totalScore", props.count);
               }}
             />
           </Link>
@@ -41,6 +40,5 @@ class Score extends React.Component {
       </div>
     );
   }
-}
 
 export default Score;
