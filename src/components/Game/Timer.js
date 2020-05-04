@@ -3,17 +3,18 @@ import { Redirect } from "react-router-dom";
 
 import "./Timer.css";
 
-const Timer = ({time}) => {
+const Timer = ({time, result}) => {
 
   const [timer, setTimer] = useState(time)
 
-  const changeTime = () => {
-    if (timer !== 0) {
-      setTimer(timer - 1);
-    }
-  };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTimer(timer => timer -1);
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
-  useEffect(() => setInterval(changeTime, 1000), [])
+
 
     const width = 150;
     const strokeWidth = 10;
